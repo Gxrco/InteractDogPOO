@@ -1,10 +1,9 @@
 package Model;
 
-import UI.DriverProgram;
-
 import java.util.Random;
 
-public class Dog extends DriverProgram {
+public class Dog{
+    //Se utiliza un atributo para cada variable de su comportamiento
     private float mood;
     private float threshold;
 
@@ -27,6 +26,7 @@ public class Dog extends DriverProgram {
 
     Random rand = new Random();
 
+    // Algoritmo de la psicologia del perro
     public void psican(Person p){
         setMood((1.0f / p.getReliability()) * (rand.nextFloat() - 0.5f) * 10f + mood);
         if (p.hasCookie()) {
