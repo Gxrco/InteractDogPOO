@@ -1,3 +1,7 @@
+//Laboratorio #1 - Programacion Orientada a Objetos UVG
+//Desarrollado por Gerson Ramirez, 22281
+//Ultima version 20.08.2022
+
 package UI;
 
 //Se importan las librerias
