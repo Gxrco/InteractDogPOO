@@ -4,9 +4,7 @@ import java.util.*;
 import Model.Dog;
 import Model.Person;
 
-public class DriverProgram {
-    Dog dog;
-    Person person;
+public class DriverProgram extends Person {
 
     public static void main(String[] args) {
         Dog dog = new Dog();
@@ -22,7 +20,11 @@ public class DriverProgram {
         System.out.println("Bienvenido a la veterinaria");
         System.out.println("-".repeat(40));
 
+
         while (!opc.equals("5")){
+            System.out.println("Tu confiabilidad: "+person.getReliability());
+            System.out.println("El animo del perro es: "+dog.getMood());
+            System.out.println("-".repeat(40));
             System.out.println("Opciones: \n1. Nueva persona \n2. Nuevo perro \n3. Sacar galleta \n4. Interactuar \n5. Salir \nSeleccione una opcion:");
             opc = r.nextLine();
             switch (opc) {
@@ -42,7 +44,7 @@ public class DriverProgram {
                     break;
                 case "4":
                     dog.psican(person);
-                    opc = verifyMood(dog, opc);
+                    opc = verifyMood(dog);
                     break;
                 case "5":
                     System.out.println(" ");
@@ -67,7 +69,7 @@ public class DriverProgram {
         return dog;
     }
 
-    public static String verifyMood(Dog d, String opc) {
+    public static String verifyMood(Dog d) {
         if (d.getMood()<d.getThreshold()) {
             System.out.println("Has sido mordido por el perro \nHa renunciado a su labor.");
             return "5";

@@ -1,8 +1,10 @@
 package Model;
 
+import UI.DriverProgram;
+
 import java.util.Random;
 
-public class Dog {
+public class Dog extends DriverProgram {
     private float mood;
     private float threshold;
 
